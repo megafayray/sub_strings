@@ -5,6 +5,7 @@ Implement a method #substrings that takes a word as the first argument and then 
 
 Done:
 - working for one word
+- Capture mutiple words (fix capitalization issue)
 
 To do:
 - handle multiple words

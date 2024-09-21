@@ -4,14 +4,36 @@ Assignment:
 Implement a method #substrings that takes a word as the first argument and then an array of valid substrings (your dictionary) as the second argument. It should return a hash listing each substring (case insensitive) that was found in the original string and how many times it was found.
 
 Done:
-- working for one word
+- Working for one word
 - Capture mutiple words (fix capitalization issue)
+- Increase value to count for multiple instances
 
 To do:
-- Values are not increasing for multiple instances
+- There are some cases (outside of the example) that don't work 
+--ex. "ii ii ii" => {"i" => 3} #the split method is only breaking the big string into word strings, and I'm only evaluating the word against the dictionary words, not breaking each word down further
 
 
 Past idea(s):
+
+# dictionary.reduce(Hash.new(0)) do |result, substring|
+#   if word.downcase.include?(substring) || substring != nil
+
+#     numba = word.count(substring)
+#     result[substring] += numba
+#     result
+#   end
+# end
+
+_______________________________________________________________________-
+
+  dictionary.reduce(Hash.new(0)) do |result, substring|
+    if word.downcase.include?(substring) || substring != nil
+      result[substring] += 1
+      result
+    end
+  end
+
+________________________________________
 
   bits = word.split("") # => ["b","e","l","o","w"] make string into array so I can use array methods on it
   piece_to_compare = bits[0] #"b"

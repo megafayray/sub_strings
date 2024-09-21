@@ -8,7 +8,7 @@ Done:
 - Capture mutiple words (fix capitalization issue)
 
 To do:
-- handle multiple words
+- Values are not increasing for multiple instances
 
 
 Past idea(s):
